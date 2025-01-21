@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helm Flask GIF Repository</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #333;
+        }
+        pre {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            overflow-x: auto;
+        }
+        a {
+            color: #0073e6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Helm Flask GIF Repository</h1>
+    <p>Welcome to the Helm Flask GIF repository! Use the commands below to add this Helm chart repository and install the chart in your Kubernetes cluster:</p>
+    
+    <h2>Steps to Use the Chart</h2>
+    <ol>
+        <li><strong>Add the repository:</strong>
+            <pre>helm repo add helmflask https://omrifialkov.github.io/helm-flaskgif</pre>
+        </li>
+        <li><strong>Update the Helm repositories:</strong>
+            <pre>helm repo update</pre>
+        </li>
+        <li><strong>Install the chart:</strong>
+            <pre>helm install helm-flask helmflask/helm-flask</pre>
+        </li>
+    </ol>
+    
+    <h2>Chart Files</h2>
+    <ul>
+        <li><a href="index.yaml">index.yaml</a> - Helm chart repository index file.</li>
+        <li><a href="helm-flask-0.1.0.tgz">helm-flask-0.1.0.tgz</a> - Packaged Helm chart.</li>
+    </ul>
+    
+    <p>For more information about Helm, visit the <a href="https://helm.sh" target="_blank">Helm official documentation</a>.</p>
+</body>
+</html>
