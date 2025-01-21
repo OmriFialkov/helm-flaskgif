@@ -16,6 +16,7 @@ This repository contains:
 - A Helm chart (`helm-flask`) for deploying a Flask-based application.
 - Instructions for adding this Helm chart repository to your Helm setup.
 - Files needed to make the repository functional with `helm repo` commands.
+- you can access the github page in : https://omrifialkov.github.io/helm-flaskgif/
 
 ---
 
