@@ -9,6 +9,6 @@ entries:
     name: helm-flask
     type: application
     urls:
-    - https://omrifialkov.github.io/helm-flaskgif/helm-flask-0.1.0.tgz
+    - https://omrifialkov.github.io/helm-flaskgif/
     version: 0.1.0
 generated: "2025-01-21T06:48:01.313935483Z"
