@@ -17,19 +17,45 @@ spec:
       containers:
       - name: flask-app
         image: {{ .Values.flaskApp.image }}
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "90Mi"
+            cpu: "50m"
+          limits:
+            memory: "130Mi"
+            cpu: "100m"
         ports:
         - containerPort: {{ .Values.flaskApp.port }}
         env:
+        # VARIABLES FROM K8S CONFIG MAP
         - name: FLASK_ENV
-          value: {{ .Values.flaskApp.flaskEnv }}
+          valueFrom: 
+            configMapKeyRef:
+              name: {{ .Values.initSqlConfigMapName }}
+              key: FLASK_ENV
         - name: MYSQL_HOST
-          value: {{ .Values.flaskApp.mysqlHost }}
+          valueFrom: 
+            configMapKeyRef:
+              name: {{ .Values.initSqlConfigMapName }}
+              key: MYSQL_HOST
         - name: MYSQL_USER
-          value: {{ .Values.flaskApp.mysqlUser }}
+          valueFrom: 
+            configMapKeyRef:
+              name: {{ .Values.initSqlConfigMapName }}
+              key: MYSQL_USER
         - name: MYSQL_PASSWORD
           valueFrom:
             secretKeyRef:
               name: mysql-secrets
               key: {{ .Values.flaskApp.mysqlPasswordSecretKey }}
         - name: MYSQL_DATABASE
-          value: {{ .Values.flaskApp.mysqlDatabase }}
+          valueFrom: 
+            configMapKeyRef:
+              name: {{ .Values.initSqlConfigMapName }}
+              key: MYSQL_DATABASE
+        - name: PORT
+          valueFrom: 
+            configMapKeyRef:
+              name: {{ .Values.initSqlConfigMapName }}
+              key: PORT
