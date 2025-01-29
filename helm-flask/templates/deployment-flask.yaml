@@ -42,4 +42,4 @@ spec:
         - name: MYSQL_DATABASE
           value: {{ .Values.flaskApp.mysqlDatabase }}
         - name: PORT
-          value: {{ .Values.flaskApp.port }}
+          value: "{{ .Values.flaskApp.port }}"
