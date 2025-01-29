@@ -28,34 +28,18 @@ spec:
         ports:
         - containerPort: {{ .Values.flaskApp.port }}
         env:
-        # VARIABLES FROM K8S CONFIG MAP
         - name: FLASK_ENV
-          valueFrom: 
-            configMapKeyRef:
-              name: {{ .Values.initSqlConfigMapName }}
-              key: FLASK_ENV
+          value: {{ .Values.flaskApp.flaskEnv }}
         - name: MYSQL_HOST
-          valueFrom: 
-            configMapKeyRef:
-              name: {{ .Values.initSqlConfigMapName }}
-              key: MYSQL_HOST
+          value: {{ .Values.flaskApp.mysqlHost }}
         - name: MYSQL_USER
-          valueFrom: 
-            configMapKeyRef:
-              name: {{ .Values.initSqlConfigMapName }}
-              key: MYSQL_USER
+          value: {{ .Values.flaskApp.mysqlUser }}
         - name: MYSQL_PASSWORD
           valueFrom:
             secretKeyRef:
               name: mysql-secrets
               key: {{ .Values.flaskApp.mysqlPasswordSecretKey }}
         - name: MYSQL_DATABASE
-          valueFrom: 
-            configMapKeyRef:
-              name: {{ .Values.initSqlConfigMapName }}
-              key: MYSQL_DATABASE
+          value: {{ .Values.flaskApp.mysqlDatabase }}
         - name: PORT
-          valueFrom: 
-            configMapKeyRef:
-              name: {{ .Values.initSqlConfigMapName }}
-              key: PORT
+          value: {{ .Values.flaskApp.port }}
