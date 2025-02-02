@@ -3,12 +3,12 @@ entries:
   helm-flask:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-01-30T17:36:50.810939869Z"
+    created: "2025-02-02T11:05:02.594595182Z"
     description: A k8s Helm chart for Flask application
-    digest: a5ab7680c5d24940a85750825173f3e4f957d4a310c6b570b81425e9feed7515
+    digest: a96b63ee1ccc910852d69fefef80226521ec0134b7458dc70bdabe600632b665
     name: helm-flask
     type: application
     urls:
-    - https://omrifialkov.github.io/helm-flaskgif/helm-flask-0.0.5.tgz
-    version: 0.0.5
-generated: "2025-01-30T17:36:50.810559329Z"
+    - https://omrifialkov.github.io/helm-flaskgif/helm-flask-0.0.6.tgz
+    version: 0.0.6
+generated: "2025-02-02T11:05:02.594184803Z"
